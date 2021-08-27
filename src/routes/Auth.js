@@ -56,7 +56,7 @@ const Auth = () => {
           placeholder="Email"
           required
           value={email}
-          onChange={onSocialClick}
+          onChange={onChange}
         />
         <input
           name="password"
@@ -64,7 +64,7 @@ const Auth = () => {
           placeholder="Password"
           required
           value={password}
-          onChange={onSocialClick}
+          onChange={onChange}
         />
         <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
         {error}
