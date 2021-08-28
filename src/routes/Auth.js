@@ -6,6 +6,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
+
   const onChange = (event) => {
     const {
       target: { name, value },
@@ -16,6 +17,7 @@ const Auth = () => {
       setPassword(value);
     }
   };
+
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -33,7 +35,9 @@ const Auth = () => {
       setError(error.message);
     }
   };
+
   const toggleAccount = () => setNewAccount((prev) => !prev);
+
   const onSocialClick = async (event) => {
     const {
       target: { name },
@@ -44,7 +48,7 @@ const Auth = () => {
     } else if (name === "github") {
       provider = new firebaseInstance.auth.GithubAuthProvider();
     }
-    const data = await authService.signInWithPopup(provider);
+    await authService.signInWithPopup(provider);
   };
 
   return (
