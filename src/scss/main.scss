@@ -1,0 +1,43 @@
+$primary-color: #5d6c8c;
+@mixin hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+@import "./Navigation.scss";
+@import "./Home.scss";
+@import "./Profile.scss";
+@import "./Auth.scss";

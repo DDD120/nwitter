@@ -17,15 +17,17 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <AuthForm />
-      <div>
-        <button onClink={onSocialClick} name="google">
-          Continue with Google
-        </button>
-        <button onClink={onSocialClick} name="github">
-          Continue with Github
-        </button>
+    <div className="auth">
+      <div className="center">
+        <AuthForm />
+        <div className="social">
+          <button onClink={onSocialClick} name="google">
+            Continue with Google
+          </button>
+          <button onClink={onSocialClick} name="github">
+            Continue with Github
+          </button>
+        </div>
       </div>
     </div>
   );

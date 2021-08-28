@@ -29,7 +29,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
   };
 
   return (
-    <div>
+    <div className="nweetBox">
       {editing ? (
         <>
           <form onSubmit={onSubmit}>
@@ -41,8 +41,8 @@ const Nweet = ({ nweetObj, isOwner }) => {
               onChange={onChange}
             />
             <input type="submit" value="Update Nweet" />
+            <button onClick={toggleEditing}>Cancel</button>
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
         </>
       ) : (
         <>
@@ -56,10 +56,10 @@ const Nweet = ({ nweetObj, isOwner }) => {
             />
           )}
           {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>Delete Nweet</button>
-              <button onClick={toggleEditing}>Edit Nweet</button>
-            </>
+            <div>
+              <button onClick={onDeleteClick}>Delete</button>
+              <button onClick={toggleEditing}>Edit</button>
+            </div>
           )}
         </>
       )}

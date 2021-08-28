@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "fbase";
+import ImageIcon from "@material-ui/icons/Image";
 
 const NweetFactory = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
@@ -52,7 +53,7 @@ const NweetFactory = ({ userObj }) => {
   const onClearAttachment = () => setAttachment(null);
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="form">
       <input
         value={nweet}
         onChange={onChange}
@@ -60,12 +61,18 @@ const NweetFactory = ({ userObj }) => {
         placeholder="What's on your mind?"
         maxLength={120}
       />
-      <input type="file" accept="image/*" onChange={onFileChange} />
-      <input type="submit" value="Nweet" />
+      <div className="nweetFactoryFooter">
+        <input type="file" accept="image/*" onChange={onFileChange} id="file" />
+        <label for="file">
+          <ImageIcon className="file" />
+        </label>
+        <input type="submit" id="submit" />
+        <label for="submit">Nweet</label>
+      </div>
       {attachment && (
-        <div>
+        <div className="attachment">
           <img src={attachment} width="50px" height="50px" alt={userObj.uid} />
-          <button onClick={onClearAttachment}>Clear</button>
+          <button onClick={onClearAttachment}>X</button>
         </div>
       )}
     </form>
