@@ -39,7 +39,7 @@ function App() {
           userObj={userObj}
         />
       ) : (
-        "Initializing..."
+        <span className="Initializing">Initializing...</span>
       )}
       <footer>&copy: {new Date().getFullYear()} Nwitter</footer>
     </>
